@@ -1,0 +1,98 @@
+{template "content_m","header_b"}
+	
+{pc:content  action="position" posid="45" order="listorder DESC" num="20"} 
+	<div class="banner">
+		{loop $data $key $val}
+			<img src="{$val['thumb']}">
+		{/loop} 
+	</div>
+	{/pc} 
+	<script>
+	var q=$(".banner img").length
+	var w=0
+	$(".banner img").hide()
+	$(".banner img").eq(0).show()
+	var r=setInterval(function(){
+		if(w<q-1)
+		{w=w+1}
+		else{w=0}
+		$(".banner img").hide()
+		$(".banner img").eq(w).show()
+	},3000)
+	</script>
+<div class="clearfix"></div>
+	<div class="content">
+	<div class="navb">
+			<ul>
+				<li><a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=9">公司简介</a></li>
+				<li><a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=37">组织架构</a></li>
+				<li><a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=18" class="bian">资质荣誉</a></li>
+				<li  style="border:none;"><a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=38" >联系我们</a></li>
+				<div class="clearfix"></div>
+			</ul>
+		</div>
+		<div style="height: 10px;background-color:#f2f1ef;margin-top: 10px;"></div>	
+		<div class="content1">
+			
+	
+			{pc:content  action="lists" catid="$catid" order="listorder DESC" num="1000" page="$page"} 
+			<div class="tixi">
+			{loop $data $key $v}
+				<a>
+					<img src="{$v[thumb]}">
+					<p>{$v[title]}</p>
+				</a>
+			{/loop} 
+				<div class="clearfix"></div>
+			</div>
+			
+			{/pc}
+		</div>
+		
+
+		
+
+
+		
+	</div>
+
+	
+	
+	{template "content_m","footer"}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</div>
+</body>
+</html>

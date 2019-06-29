@@ -1,0 +1,80 @@
+
+{template "content_m","header_b"}
+
+{pc:content  action="position" posid="50" order="listorder DESC" num="20"} 
+	<div class="banner">
+		{loop $data $key $val}
+			<img src="{$val['thumb']}">
+		{/loop} 
+	</div>
+	{/pc} 
+	<script>
+	var q=$(".banner img").length
+	var w=0
+	$(".banner img").hide()
+	$(".banner img").eq(0).show()
+	var r=setInterval(function(){
+		if(w<q-1)
+		{w=w+1}
+		else{w=0}
+		$(".banner img").hide()
+		$(".banner img").eq(w).show()
+	},3000)
+	</script>
+<div class="clearfix"></div>
+	<div class="content">
+		<div class="content1">
+			<div class="biaot">
+				<h2>健康安全与环境</h2>
+				<a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=32">更多&gt;&gt;</a>
+				<div class="clearfix"></div>
+			</div>
+			{pc:content  action="position" posid="43" order="listorder DESC" num="2"} 
+			<ul class="xinwen2">
+				{loop $data $key $v}
+				<li>
+					<a href="{str_replace('http://www.','http://m.',$v[url])}">
+						<img src="{$v['thumb']}">
+						<h4>{str_cut($v['title'],56,"…")}</h4>
+						<h5>{date("Y-m-d",$v["inputtime"])}</h5>
+						<h3 style="clear: both;"></h3>
+					</a>
+				</li>
+				{/loop}
+			</ul>
+			{/pc}
+			{pc:content  action="position" posid="36" order="listorder DESC" num="3"} 
+			<ul class="xinwen4">
+				{loop $data $key $v}
+				<li>
+					<a href="{str_replace('http://www.','http://m.',$v[url])}">{$v['title']}<span>{date("Y-m-d",$v["inputtime"])}</span></a>
+				</li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+		<div style="height: 10px;background-color:#dcdcdc;margin-top: 10px;"></div>	
+		<div class="content1">
+			<div class="biaot">
+				<h2>责任与关怀</h2>
+				<a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=33">更多&gt;&gt;</a>
+				<div class="clearfix"></div>
+			</div>
+			{pc:content  action="position" posid="38" order="listorder DESC" num="3"}
+			<ul class="xinwen2">
+				{loop $data $key $v} 
+				<li>
+					<a href="{str_replace('http://www.','http://m.',$v[url])}">
+						<img src="{$v['thumb']}">
+						<h4>{$v['title']}</h4>
+						<h5>{date("Y-m-d",$v["inputtime"])}</h5>
+						<h3 style="clear: both;"></h3>
+					</a>
+				</li>
+				{/loop} 	
+			</ul>
+			{/pc}
+		</div>		
+	</div>
+
+{template "content_m","footer"}

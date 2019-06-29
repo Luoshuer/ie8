@@ -1,0 +1,114 @@
+{template "content_m","header_b"}
+{pc:content  action="position" posid="45" order="listorder DESC" num="20"} 
+	<div class="banner">
+		{loop $data $key $val}
+			<img src="{$val['thumb']}">
+		{/loop} 
+	</div>
+	{/pc} 
+	<script>
+	var q=$(".banner img").length
+	var w=0
+	$(".banner img").hide()
+	$(".banner img").eq(0).show()
+	var r=setInterval(function(){
+		if(w<q-1)
+		{w=w+1}
+		else{w=0}
+		$(".banner img").hide()
+		$(".banner img").eq(w).show()
+	},3000)
+	</script>
+<div class="clearfix"></div>
+	<div class="content">
+		<div class="navb">
+			<ul>
+				<li><a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=9" class="bian">公司简介</a></li>
+				<li><a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=37">组织架构</a></li>
+				<li><a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=18">资质荣誉</a></li>
+				<li  style="border:none;"><a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=38" >联系我们</a></li>
+				<div class="clearfix"></div>
+			</ul>
+		</div>
+		<div style="height: 10px;background-color:#f2f1ef;margin-top: 10px;"></div>	
+		<div class="content4">
+			<div class="biaot">
+				<h2>公司简介</h2>
+		
+				<div class="clearfix"></div>
+			</div>
+			<div class="jianjie">
+				
+				<p>
+				 南京利德东方橡塑科技有限公司创建于1949年5月16日。公司位于江苏省南京市六合经济开发区宁六路581号。
+                 <br>
+    			作为橡胶制品科技研发和智能、绿色制造的现代化企业，国家高新技术企业，江苏省工程技术研究中心，公司拥有专业的研发团队和通过CNAS认证的检测中心，主要产品为汽车管路、轨道交通类橡胶制品，及新能源、航空航天、海洋工程等新兴市场类橡胶制品。产品出口美国、日本和东南亚等国家和地区，“利德东方”、“ORLETE”和“7425”品牌在行业内具有极高的知名度和美誉度。
+                <br>
+      		   公司以“科技引领未来，创新驱动发展”为发展战略， “三优”、“四满意”为发展定位，努力成为国内一流、国际先进的橡胶制品研发中心。<br>
+
+				</p>
+				<img src="{IMG_PATH}images2/a18.png">
+			</div>
+		</div>
+		<div style="height: 10px;background-color:#f2f1ef;margin-top: 10px;"></div>	
+		<div class="content4">
+			<div class="biaot">
+				<h2>发展历程</h2>
+	
+				<div class="clearfix"></div>
+			</div>
+			<div class="jianjie">
+				
+				<p>1949年5月16日，中国人民解放军在南京成立“华东军区后勤部运输部415厂”。<br>
+
+1965年7月，更名为“中国人民解放军第七四二五工厂”。<br>
+
+1981年2月，工厂成为国家第一批军工转民用的企业，以生产橡胶软管、油封等为主。<br>
+
+2001年3月，工厂由中国人民解放军南京军区装备部划转中国蓝星化学清洗总公司，隶属中车集团，更名为“中车集团南京七四二五工厂”。<br>
+
+2008年1月，工厂随中国化工集团公司业务整合隶属中国化工橡胶总公司。<br>
+
+2011年9月，工厂改制，成立“南京七四二五橡塑有限责任公司”。<br>
+
+2015年1月，公司完成混合所有制改革投入运营。<br>
+
+2016年3月，为适应市场需求和战略发展需要，公司更名为“南京利德东方橡塑科技有限公司”。<br>
+
+2018年2月，金浦投资控股集团有限公司完成中国化工橡胶有限公司持有公司51%股权的收购。<br>
+
+
+
+				</p>
+				<img src="{IMG_PATH}images2/a20.png">
+			</div>
+		</div>
+		<div class="content4">
+			<div class="biaot">
+				<h2>企业文化</h2>
+
+				<div class="clearfix"></div>
+			</div>
+			<div class="jianjie">
+				
+				<p>
+				 诚信。诚信是一名员工，一个企业，都必须具有的优良品质。诚信，它应该是员工的为人之道、立身处
+					事之本，是企业的发展之魂。一个人若不讲信用，在社会上就无立足之地。在社会交往中，只有言而有
+					信，人与人之间才能无私相助。一级组织、一名领导，只有取信于民，才能赢得广大群众的支持。在市
+					场经济活动中，一个企业，一个单位，只有信守合约讲究诚信，才能有无限的生命力。利德东方公司多
+					年来讲求诚信，赢得了客户普遍的认可。今后要更好地发展，每一名员工都应该发扬诚信美德，公司也
+					应一如既往地在与客户交往中信守诺言言行一致诚实不欺，这样，利德东方公司就一定会长盛不衰，赢
+					得更加辉煌的明天。
+
+				</p>
+
+			</div>
+		</div>
+		
+	</div>
+
+{template "content_m","footer"}
+
+
+
+

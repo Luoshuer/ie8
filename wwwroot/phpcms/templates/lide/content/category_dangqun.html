@@ -1,0 +1,107 @@
+{template "content","header_b"}
+
+
+		{pc:content  action="position" posid="49" order="listorder DESC" num="20"} 
+
+	  {loop $data $key $val} 
+		  <img src="{$val['thumb']}" class="topim">
+		 {/loop} 
+
+		{/pc} 
+	
+<div class="content">
+	<div class="dangjian">
+		<div class="biaot4">
+			党建工作
+		</div>
+		<div class="dangjianbox">
+		<div class="dangjian1">
+			<div class="dangjian1a">
+				<h2></h2>
+				{pc:content  action="position" posid="31" order="listorder DESC" num="1"} 
+				{loop $data $key $v} 
+				<p>
+					{str_cut($v['jianshu'],200,"…")}<a href="{$v[url]}">【详情】</a>
+				</p>
+				{/loop} 
+				{/pc} 
+			</div>
+			{pc:content  action="position" posid="32" order="listorder DESC" num="3"} 
+			<div class="dangjian1b">
+			{loop $data $key $v} 
+				<a href="{$v[url]}">
+					<h2>{date("d",$v["inputtime"])}<span>{date("Y-m",$v["inputtime"])}</span></h2>
+					<h3>{str_cut($v['jianshu'],160,"…")}</h3>
+					<div class="clearfix"></div>
+				</a>
+			{/loop} 
+			</div>
+			{/pc} 
+			<a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=29" class="gengduo">更多&gt;&gt;</a>
+			<div class="clearfix"></div>
+		</div>
+		<div class="dangjian2">
+			<div id="full-screen-slider">
+			{pc:content  action="position" posid="33" order="listorder DESC" num="20"} 
+				<ul id="slides">
+				{loop $data $key $v} 
+					<li style="background:url('{$v[thumb]}') no-repeat center top"><a href="{$v[url]}"></a>
+					<h2 class="timu">{$v[title]}</h2></li>
+				{/loop}
+				</ul>
+			{/pc}
+			</div>
+		</div>
+		<div class="clearfix"></div>
+		</div>
+	</div>
+	<div class="gongsi">
+		<div class="biaot4">
+			工会工作
+		</div>
+		{pc:content  action="position" posid="34" order="listorder DESC" num="5"} 
+		<div class="gongsi1" style="margin-bottom: 0;">
+			{loop $data $key $v} 
+			<div class="gongsi1a" style="border:none;">
+				<a href="{$v[url]}" class="gongsi1b" style="margin-left: 0;"><img src="{$v[thumb]}"></a>
+				<a href="{$v[url]}" class="gongsi1c" style="margin-right: 100px;">
+					<h2>{date("Y-m-d",$v["inputtime"])}</h2>
+					<h3>{$v[title]}</h3>
+					<h4>{str_cut($v['jianshu'],460,"…")}</h4>
+				</a>
+				<div class="clearfix"></div>
+			</div>
+			{/loop}
+			<div style="height: 1px; background-color:#f2f2f2;margin-bottom: 10px;"></div>
+			<a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=30" class="gengduo">更多&gt;&gt;</a>
+			<div class="clearfix"></div>
+		</div>
+		{/pc}
+	</div>
+	<div class="shenghuo">
+		<div class="biaot4">
+			员工生活
+		</div>
+
+		{pc:content  action="lists" catid="31" order="listorder DESC" num="3"} 
+		<div class="gongsi1" style="margin-bottom: 0;">
+			{loop $data $key $v} 
+			<div class="gongsi1a" style="border:none;">
+				<a href="{$v[url]}" class="gongsi1b" style="margin-left: 0;"><img src="{$v[thumb]}"></a>
+				<a href="{$v[url]}" class="gongsi1c" style="margin-right: 100px;">
+					<h2>{date("Y-m-d",$v["inputtime"])}</h2>
+					<h3>{$v[title]}</h3>
+					<h4>{$v['description']}</h4>
+				</a>
+				<div class="clearfix"></div>
+			</div>
+			{/loop}
+			<div style="height: 1px; background-color:#f2f2f2;margin-bottom: 10px;"></div>
+			<a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=31" class="gengduo">更多&gt;&gt;</a>
+			<div class="clearfix"></div>
+		</div>
+		{/pc}
+	
+	</div>
+</div>
+{template "content","footer"}

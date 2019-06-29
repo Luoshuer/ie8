@@ -1,0 +1,25 @@
+{template "content","header_b"}
+<div id="ban1">
+	  <div class="banner">
+		{pc:content  action="position" posid="45" order="listorder DESC" num="20"} 
+		<ul class="img">
+	  {loop $data $key $val} 
+		  <li><a><img src="{$val['thumb']}"></a></li>
+		 {/loop} 
+		</ul>
+		{/pc} 
+		<ul class="num">
+		</ul>
+		<div class="btn btn_l">&lt;</div>
+		<div class="btn btn_r">&gt;</div>
+	  </div>
+	</div>
+<div class="content">
+	<div class="page" style="width:1200px;margin:0 auto;">
+		{$content}
+		<div style="clear: both"></div>
+	</div>
+	<div style="clear: both"></div>
+</div>
+<div style="clear: both"></div>
+{template "content","footer"}

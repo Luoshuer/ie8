@@ -1,0 +1,190 @@
+{template "content","header_b"}
+
+		{pc:content  action="position" posid="46" order="listorder DESC" num="20"} 
+
+	  {loop $data $key $val} 
+		  <img src="{$val['thumb']}" class="topim">
+		 {/loop} 
+
+		{/pc} 
+
+<div class="content">
+	<div class="xinwen">
+		<div class="xinwen1">
+			<div class="jianjie5a">
+				<div class="biaot2">公司动态</div>
+			</div>
+			<div class="xinwen1a">
+			<div class="xinwen1ab">
+				{pc:content  action="position" posid="23" order="listorder DESC" num="1"} 
+				{loop $data $key $v} 
+				<div class="xinwen1a1">
+					<div class="xinwenbox1" style="background-image: url({$v['thumb']});background-size: 560px 300px;background-repeat: no-repeat;">
+						<div class="shijian">
+							<h2>{date("d",$v["inputtime"])}</h2>
+							<h3>{date("Y/m",$v["inputtime"])}</h3>
+						</div>
+					</div>
+					<div class="xinwen1a2">
+						<h3>{str_cut($v['title'],56,"…")}</h3>
+						<p>{str_cut($v['jianshu'],260,"…")} <a href="{$v['url']}">查看全文&gt;&gt;</a></p>
+					</div>
+				</div>
+				{/loop}
+				{/pc} 
+
+				<div class="xinwenaa">
+				{pc:content  action="position" posid="24" order="listorder DESC" num="3"} 
+					<ul>
+					{loop $data $key $v} 
+						<li>
+							<a href="{$v['url']}">
+								<h2>{date("d",$v["inputtime"])}<span>{date("Y/m",$v["inputtime"])}</span></h2>
+								<h3>{str_cut($v['title'],56,"…")}<span>{str_cut($v['jianshu'],220,"…")}</span></h3>
+								<div class="clearfix"></div>
+							</a>
+						</li>
+					{/loop}
+					</ul>
+				{/pc} 
+				</div>
+				<div class="clearfix"></div>
+				<a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=19" class="xinwenaa1">查看更多&gt;&gt;</a>
+				
+			</div>
+			</div>
+		</div>
+		
+		<div class="gongsi" style="margin-top: 50px;">
+			<div class="biaot4">
+				行业动态
+			</div>
+			{pc:content  action="position" posid="25" order="listorder DESC" num="3"} 
+			<div class="gongsi1" style="margin-bottom: 0;">
+				{loop $data $key $v} 
+				<div class="gongsi1a" style="border:none;">
+					<a href="{$v[url]}" class="gongsi1b" style="margin-left: 0;"><img src="{$v[thumb]}"></a>
+					<a href="{$v[url]}" class="gongsi1c" style="margin-right: 100px;">
+						<h2>{date("Y-m-d",$v["inputtime"])}</h2>
+						<h3>{$v[title]}</h3>
+						<h4>{str_cut($v['jianshu'],460,"…")}</h4>
+					</a>
+					<div class="clearfix"></div>
+				</div>
+				{/loop}
+				<div style="height: 1px; background-color:#f2f2f2;margin-bottom: 10px;"></div>
+				<a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=20" class="gengduo">更多&gt;&gt;</a>
+				<div class="clearfix"></div>
+			</div>
+			{/pc}
+		</div>
+		<div class="shipin">
+			<div class="jianjie5a">
+				<div class="biaot2">视频动态</div>
+			</div>
+			<div class="k3dbox" style="height: 400px;">
+				<div class="k3d">
+					{pc:content  action="position" posid="52" order="listorder DESC" num="1000"} 
+					<div class="k3d1">
+					{loop $data $key $val} 
+						<a href="{$val['url']}" style="background-image:url({$val['thumb']});background-size:498px 300px;" ><h2>{$val['title']}</h2></a>
+					{/loop}
+					{pc:content  action="position" posid="52" order="listorder DESC" num="1"}
+					{loop $data $key $u}
+					<a href="{$u['url']}" style="background-image:url({$u['thumb']});background-size:498px 300px;" ><h2>{$u['title']}</h2></a> 
+					{/loop} 
+					{/pc}					
+						<div class="clearfix"></div>
+					</div>
+					{/pc} 
+				</div>
+				<div class="k3e">
+				{pc:content  action="position" posid="52" order="listorder DESC" num="1000"} 
+					<div class="k3e1">
+					{loop $data $key $val} 
+						<a href="{$val['url']}" style="background-image:url({$val['thumb']});background-size:382px 270px;" ><h2>{$val['title']}</h2></a>
+						{/loop}
+						{pc:content  action="position" posid="52" order="listorder DESC" num="1"}
+					{loop $data $key $u}
+					<a href="{$u['url']}" style="background-image:url({$u['thumb']});background-size:382px 270px;" ><h2>{$u['title']}</h2></a> 
+					{/loop} 
+					{/pc} 
+						<div class="clearfix"></div>
+					</div>
+					{/pc}
+					<div class="k3eb"></div>
+				</div>
+			
+				<div class="k3r">
+				{pc:content  action="position" posid="52" order="listorder DESC" num="1000"} 
+					<div class="k3r1">
+					{loop $data $key $val} 
+						<a href="{$val['url']}" style="background-image:url({$val['thumb']});background-size:382px 270px;" ><h2>{$val['title']}</h2></a>
+						{/loop} 
+						{pc:content  action="position" posid="52" order="listorder DESC" num="1"}
+					{loop $data $key $u}
+					<a href="{$u['url']}" style="background-image:url({$u['thumb']});background-size:382px 270px;" ><h2>{$u['title']}</h2></a> 
+					{/loop} 
+					{/pc}
+						<div class="clearfix"></div>
+						
+					</div>
+					{/pc}
+					<div class="k3rb"></div>
+				</div>
+			</div>
+			
+			<script>
+	var q=$(".k3d1 a").length
+	$(".k3d1").width(498*q)
+	var w=0
+	setInterval(function(){
+		if(w<q-1)
+		{w=w+1}
+		else{
+			w=1
+			$(".k3d1").css("left",0)
+		}
+		$(".k3d1").animate({left:-498*w},1000)
+	},4000)
+	
+	var a=$(".k3e1 a").length
+	$(".k3e1").width(382*a)
+	var d=a-2
+   var f=-382*d
+   $(".k3e1").css("left",f)
+	setInterval(function(){
+		if(d<a-1)
+		{d=d+1}
+		else{
+			d=1
+			$(".k3e1").css("left",0)
+		}
+		$(".k3e1").animate({left:-382*d},1000)
+	},4000)
+	
+	var z=$(".k3r1 a").length
+	$(".k3r1").width(382*z)
+	var x=1
+   var c=-382*x
+   $(".k3r1").css("left",c)
+	setInterval(function(){
+		if(x<z-1)
+		{x=x+1}
+		else{
+			x=1
+			$(".k3r1").css("left",0)
+		}
+		$(".k3r1").animate({left:-382*x},1000)
+	},4000)
+	
+	
+	
+</script>
+
+			<a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=22" style="color:#0063af;font-size: 12px;display: block;width:940px;margin:0 auto;text-align: right;">更多&gt;&gt;</a>
+		</div>
+		
+	</div>
+</div>
+{template "content","footer"}

@@ -1,0 +1,83 @@
+{template "content","header"}
+<div class="content">
+<div class="content1">
+	<div class="content1box">
+		<div class="biaot">新闻动态</div>
+		<div class="dongtai">
+			{pc:content  action="position" posid="20" order="listorder DESC" num="1"} 
+			{loop $data $key $v} 
+			<a href="{$v['url']}" class="dongtai1" style="background-image: url({$v['thumb']});">
+			<p >{str_cut($v['title'],44,"…")}<br>
+       	 <span>{str_cut($v['jianshu'],230,"…")}</span>
+        </p>
+			</a>
+			{/loop} 
+			{/pc} 
+			{pc:content  action="position" posid="21" order="listorder DESC" num="4"} 
+			{loop $data $key $v} 
+			<a href="{$v['url']}" class="dongtai2" style="background-image: url({$v['thumb']});">
+				<p>{str_cut($v['title'],40,"…")}<br>
+       	 	<span>{str_cut($v['jianshu'],120,"…")}</span>
+       	 	</p>
+			</a>
+			{/loop} 
+			{/pc} 
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<div class="content2">
+	<div class="content2box">
+		<div class="biaot">产品中心</div>
+		<div class="chanpin">
+			<a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=23">
+				<img src="{IMG_PATH}images/a7.png">
+			</a>
+			<a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=24" style="margin-left: 42px;">
+				<img src="{IMG_PATH}images/a8.png">
+			</a>
+			<a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=25" style="margin-left: 42px;">
+				<img src="{IMG_PATH}images/a9.png">
+			</a>
+			<div class="clearfix"></div>
+		</div>
+	</div>	
+</div>
+<div class="content1">
+	<div class="content1box">
+		<div class="biaot">科技与创新</div>
+		<div class="keji">
+			<a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=12#p11">
+				<img src="{IMG_PATH}images/a10.png">
+			</a>
+			<a style="margin-left: 40px;" href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=12#p22">
+				<img src="{IMG_PATH}images/a11.png">
+			</a>
+			<a style="margin-left: 40px;" href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=12#p33">
+				<img src="{IMG_PATH}images/a12.png">
+			</a>
+			<a style="margin-left: 40px;" href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=12#p44">
+				<img src="{IMG_PATH}images/a13.png">
+			</a>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+<div class="content2">
+	<div class="content2box">
+		<div class="biaot">关于我们</div>
+		<div class="guanyu">
+			<img src="{IMG_PATH}images/a14.png">
+			<div class="guanyu1">
+				<h2>南京利德东方橡塑科技有限公司</h2>
+				<p>南京利德东方橡塑科技有限公司创建于1949年5月16日。公司位于江苏省南京市六合经济开发区宁六路581号。<br>
+					作为橡胶制品科技研发和智能、绿色制造的现代化企业，国家高新技术企业，江苏省工程技术研究中心，公司拥有专业的研发团队和通过CNAS认证的检测中心，主要产品为汽车管路、轨道交通类橡胶制品，及新能源、航空航天、海洋工程等新兴市场类橡胶制品。产品出口美国、日本和东南亚等国家和地区，“利德...
+				</p>
+				<a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=9">更多>></a>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</div>
+</div>
+{template "content","footer"}

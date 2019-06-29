@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+<meta name="Keywords" content="{$SEO['keyword']}" >
+<meta name="Description" content="{$SEO['description']}" >
+<link href="/favicon.ico" rel="shortcut icon">
+
+<script src="{JS_PATH}js/jquery.js"></script>
+<link type="text/css" rel="stylesheet" href="{CSS_PATH}css/style_m.css">
+
+
+
+
+
+</head>
+
+<body>
+<div class="all">
+	<a class="top" href="http://m.orlete.cn/" style="display: block;" >
+		<img src="{IMG_PATH}images2/a1.png">
+	</a>
+	{pc:content  action="position" posid="18" order="listorder DESC" num="20"} 
+	<div class="banner">
+		{loop $data $key $val}
+			<img src="{$val['thumb']}">
+		{/loop} 
+	</div>
+	{/pc} 
+	<script>
+	var q=$(".banner img").length
+	var w=0
+	$(".banner img").hide()
+	$(".banner img").eq(0).show()
+	var r=setInterval(function(){
+		if(w<q-1)
+		{w=w+1}
+		else{w=0}
+		$(".banner img").hide()
+		$(".banner img").eq(w).show()
+	},3000)
+	</script>
+	<div class="clearfix"></div>
+	

@@ -1,0 +1,34 @@
+
+<div class="footer">
+<div class="youqing">
+	<h2>友情链接</h2>
+	{pc:content  action="position" posid="19" order="listorder DESC" num="20"} 
+	<div class="youqing1">
+	{loop $data $key $v} 
+		<a href="{$v['youq']}">{$v['title']}</a>
+	{/loop} 
+		<div class="clearfix"></div>
+	</div>
+	{/pc} 
+
+
+	<div class="clearfix"></div>
+</div>
+<div class="di">
+	Copyright © 南京利德东方橡塑科技有限公司<br>
+	 苏ICP备16005312号-1
+</div>
+</div>
+<a href="#top" class="topt" style="color:#1d90c7;z-index: 9999;"><img src="{IMG_PATH}images/a15.png"></a>
+<script>
+	$(".pagess a").hide()
+	$(".pagess span").hide()
+	$(".pagess a").eq(1).show()
+	$(".pagess a").last().show()
+</script>
+<style>
+	.pagess a{color:#c9c9c9;font-size: 14px;}
+	.pagess a:hover{color:#1d90c7;}
+</style>
+</body>
+</html>

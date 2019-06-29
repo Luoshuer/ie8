@@ -1,0 +1,30 @@
+{template "content","header_b"}
+
+		{pc:content  action="position" posid="51" order="listorder DESC" num="20"} 
+
+	  {loop $data $key $val} 
+		  <img src="{$val['thumb']}" class="topim">
+		 {/loop} 
+
+		{/pc} 
+
+<div class="content">
+	<div class="zwx">
+		<div class="zwxbox">
+		<div class="zwx1">
+			<h1>{$mingcheng}</h1>
+			<h2>南京利德东方橡塑科技有限公司</h2>
+			<h3>{$xinzi} / {$didian} / {$jingyan} / {$xueli} / {$quanzhi}</h3>
+		</div>
+		<div class="zwx2">
+			<p>{date('Y-m-d',strtotime($inputtime))}</p>
+			<a>简历邮箱 hr@orlete.com</a>
+		</div>
+		<div class="clearfix"></div>
+		</div>
+	</div>
+	<div class="zwn">
+		{$content}
+	</div>
+</div>
+{template "content","footer"}

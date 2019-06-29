@@ -1,0 +1,41 @@
+{template "content","header_b"}
+
+		{pc:content  action="position" posid="50" order="listorder DESC" num="20"} 
+
+	  {loop $data $key $val} 
+		 <img src="{$val['thumb']}" class="topim">
+		 {/loop} 
+
+		{/pc} 
+
+<div class="content">
+	<div class="gongsi">
+		<div class="biaot3">
+			<div class="biaot3a">
+			<h1>{$CATEGORYS[$catid][catname]}</h1>
+			<h2></h2>
+			</div>
+		</div>
+		<div class="xiangqing">
+			<div class="xiangqing1">
+				<h1>{$title}</h1>
+				<h2>发表时间：{$inputtime}&nbsp;&nbsp;来源：{$copyfrom}</h2>
+			</div>
+			<div class="xiangqing2">
+				{$content}
+			</div>
+			<div class="xiangqing3">
+				<div class="xiangqing3a">
+				  <strong>上一条：</strong><a href="{$previous_page[url]}">{$previous_page[title]}</a><br />
+             <strong>下一条：</strong><a href="{$next_page[url]}">{$next_page[title]}</a>
+				</div>
+		
+				<a href="{$CATEGORYS[$top_parentid][url]}" class="xiangqing3b">
+					返回列表
+				</a>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+</div>
+{template "content","footer"}

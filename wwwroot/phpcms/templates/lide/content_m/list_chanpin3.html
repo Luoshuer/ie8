@@ -1,0 +1,91 @@
+{template "content_m","header_b"}
+{pc:content  action="position" posid="47" order="listorder DESC" num="20"} 
+	<div class="banner">
+		{loop $data $key $val}
+			<img src="{$val['thumb']}">
+		{/loop} 
+	</div>
+	{/pc} 
+	<script>
+	var q=$(".banner img").length
+	var w=0
+	$(".banner img").hide()
+	$(".banner img").eq(0).show()
+	var r=setInterval(function(){
+		if(w<q-1)
+		{w=w+1}
+		else{w=0}
+		$(".banner img").hide()
+		$(".banner img").eq(w).show()
+	},3000)
+	</script>
+<div class="clearfix"></div>
+	<div class="content">
+		<div class="navb">
+			<ul>
+				<li style="width:33.3%;"><a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=23" class="">汽车领域</a></li>
+				<li style="width:33.3%;"><a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=24" class="">轨道交通</a></li>
+				<li style="border:none;width:33.3%;"><a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=25" class="">新航海</a></li>
+				<div class="clearfix"></div>
+			</ul>
+		</div>
+		<div style="height: 10px;background-color:#dcdcdc;margin-top: 10px;"></div>	
+		<div class="biaot">
+				<h2>产品介绍</h2>
+				<a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=48" style="display: block;float: right;font-size: 14px;color:#1d90c7">查看更多>></a>
+				<div class="clearfix"></div>
+		</div>
+		<div style="height: 1px;background-color:#f4f4f4;margin-top: 10px;"></div>	
+		<div class="chanpinl">
+			<p>{$CATEGORYS[$catid][description]}</p>
+			{pc:content  action="position" posid="56" order="listorder DESC" num="6"} 
+			<div class="chanpinbox">
+				{loop $data $key $v}
+				<a href="{str_replace('http://www.','http://m.',$v[url])}">
+					<img src="{$v[thumb]}">
+					<h2>{str_cut($v['title'],28,"…")}</h2>
+				</a>
+				{/loop}
+				<div class="clearfix"></div>
+			</div>
+			{/pc} 
+		</div>
+		<div class="chanpin2">
+			<div class="biaot">
+				<h2 style="float: left;">合作伙伴</h2><a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=26" style="font-size: 14px;float: right;color:#1d90c7;width:auto;display: block;margin-top: 0;">查看更多>></a>
+				<div class="clearfix"></div>
+			</div>
+			{pc:content  action="position" posid="27" order="listorder DESC" num="6"} 
+			<div class="chanpin2b">
+			{loop $data $key $v} 
+				<a href="{$v[youq]}"><img src="{$v[thumb]}"></a>
+			{/loop} 
+				<div class="clearfix"></div>
+				
+			</div>
+			{/pc} 
+			
+		</div>
+	</div>
+		<div class="xianqi" style="display: none;">{$catid}</div>
+
+	<script>
+		var pp=$(".xianqi").text()
+
+		if(pp==23){
+			$(".navb ul a").eq(0).addClass("bian")
+		}
+		if(pp==24){
+			$(".navb ul a").eq(1).addClass("bian")
+		}
+		if(pp==25){
+			$(".navb ul a").eq(2).addClass("bian")
+		}
+
+</script>
+
+{template "content_m","footer"}
+	
+	
+
+

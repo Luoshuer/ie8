@@ -1,0 +1,46 @@
+{template "content","header_b"}
+
+		{pc:content  action="position" posid="50" order="listorder DESC" num="20"} 
+
+	  {loop $data $key $val} 
+		  <img src="{$val['thumb']}" class="topim">
+		 {/loop} 
+
+		{/pc} 
+
+<div class="content">
+	<div class="biaot3">
+			<div class="biaot3a">
+			<h1>{$CATEGORYS[$catid][catname]}</h1>
+			<h2>HEALTHY AND SAFE ENVIRONMENT</h2>
+			</div>
+		</div>
+		<div class="jiankang">
+
+			<div class="xinwen2a">
+			{pc:content  action="lists" catid="$catid" order="listorder DESC" num="12" page="$page"} 
+				<ul>
+					{loop $data $key $v} 
+						<li>
+							<a href="{$v['url']}">
+								<h2>{date("d",$v["inputtime"])}<span>{date("Y-m",$v["inputtime"])}</span></h2>
+								<h3 style="width:930px;">{str_cut($v['title'],56,"…")}
+								<span>{$v['description']}</span>
+								</h3>
+								<div class="clearfix"></div>
+							</a>
+						</li>
+					{/loop} 
+						<div class="clearfix"></div>
+				</ul>
+				<div id="pages" class="pagess" style="margin-top: 50px;margin-right: 60px;">{$pages}</div>
+				<div class="clearfix"></div>
+			{/pc}  
+
+			</div>
+
+		</div>
+		
+
+</div>
+{template "content","footer"}

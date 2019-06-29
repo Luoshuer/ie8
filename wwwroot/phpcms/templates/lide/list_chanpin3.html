@@ -1,0 +1,92 @@
+{template "content","header_b"}
+
+<div id="ban1">
+	  <div class="banner">
+	  {pc:content  action="position" posid="47" order="listorder DESC" num="20"} 
+		<ul class="img">
+	  {loop $data $key $val} 
+		  <li><a><img src="{$val['thumb']}"></a></li>
+		 {/loop} 
+		</ul>
+		{/pc} 
+
+		<ul class="num">
+		</ul>
+		<div class="btn btn_l">&lt;</div>
+		<div class="btn btn_r">&gt;</div>
+	  </div>
+	</div>
+	
+<div class="content">
+	<a name="chanpint"></a>
+	<div class="jianjie">
+		<div class="jianjie1">
+			<div class="xian" style="width:387px;"></div>
+			<ul style="width:426px;">
+				<li>
+					<a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=23#chanpint">汽车领域</a>
+				</li>
+				<li>
+					<a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=24#chanpint">轨道交通</a>
+				</li>
+				<li>
+					<a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=25#chanpint">新航海</a>
+				</li>
+				<div class="clearfix"></div>
+			</ul>
+			<div class="xian" style="width:387px;"></div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	
+	<div class="chanpina">
+		<div class="biaot4">
+			{$CATEGORYS[$catid][catname]}<a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=50" style="display: block;float: right;font-size: 16px;color:#1d90c7">查看更多>></a>
+		</div>
+		<div class="chanpina1">
+			<p>{$CATEGORYS[$catid][description]}</p>
+			{pc:content  action="position" posid="56" order="listorder DESC" num="6"} 
+			<ul>
+				{loop $data $key $v}
+				<li>
+					<a href="{$v['url']}" class="chanpin1a">
+						<img src="{$v[thumb]}">
+					</a>
+					<a href="{$v['url']}" class="chanpin1b">
+						<h2>{str_cut($v['title'],36,"…")}</h2>
+						<h3>{str_cut($v['description'],160,"…")}</h3>
+					</a>
+				</li>
+				{/loop}
+				<div id="pages" class="pagess" style="margin-top: 30px;margin-right: 50px;">{$pages}</div>
+				<div class="clearfix"></div>				
+			</ul>
+			{/pc}  
+		</div>
+	</div>
+	
+	
+	
+	<div class="chanpinb">
+		<div class="biaot4">
+			合作伙伴<a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=26" style="display: block;float: right;font-size: 16px;color:#1d90c7">查看更多>></a>
+		</div>
+		
+		<div class="chanpinb1">
+		{pc:content  action="position" posid="27" order="listorder DESC" num="40"} 
+			<ul>
+			{loop $data $key $v} 
+				<li>
+					<a href="{$v[youq]}">
+						<img src="{$v[thumb]}">
+					</a>
+				</li>
+			{/loop} 
+				<div class="clearfix"></div>
+			</ul>
+		{/pc} 
+		</div>
+	</div>
+</div>
+{template "content","footer"}

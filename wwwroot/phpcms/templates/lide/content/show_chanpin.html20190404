@@ -1,0 +1,54 @@
+{template "content","header_c"}
+
+		{pc:content  action="position" posid="47" order="listorder DESC" num="20"} 
+
+	  {loop $data $key $val} 
+		  <img src="{$val['thumb']}" class="topim">
+		 {/loop} 
+
+		{/pc} 
+
+<div class="content">
+	<div class="chanpinxq">
+		<div class="biaot3">
+			<div class="biaot3a">
+			<h1>{$CATEGORYS[$catid][catname]}</h1>
+			<h2></h2>
+			</div>
+		</div>
+		<div class="chanpinxq1">
+			<h1>{$title}</h1>
+			<div class="chanpinxq2">
+				<img src="{$thumb}">
+				<p>{$content}</p>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		<div class="tuijiancp">
+			<div class="biaot4">
+				推荐产品
+			</div>
+			<div class="tuijianbox">
+				<div class="kmr_frbox">
+				  <img class="kmr_frBtnL prev" src="{IMG_PATH}images/a22.png">
+				  <div class="kmr_frUl">
+				  {pc:content  action="position" posid="28" order="listorder DESC" num="20"} 
+					  <ul>
+					   {loop $data $key $v} 
+						   <li><a href="{$v[url]}" target="_blank"><img src="{$v[thumb]}"></a></li>
+						{/loop}
+					  </ul>
+				  {/pc} 
+				  </div>
+  				  <img class="kmr_frBtnR next" src="{IMG_PATH}images/a23.png">
+				</div>
+				<script language="javascript">
+				$(".kmr_frUl ul li img").hover(function(){$(this).css("border-color","#A0C0EB");},function(){$(this).css("border-color","#d8d8d8")});
+				jQuery(".kmr_frbox").slide({titCell:"",mainCell:".kmr_frUl ul",autoPage:true,effect:"leftLoop",autoPlay:true,vis:4});
+				</script>
+			</div>
+		</div>
+	</div>
+	
+</div>
+{template "content","footer"}

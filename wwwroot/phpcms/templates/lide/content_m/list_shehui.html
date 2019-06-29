@@ -1,0 +1,92 @@
+{template "content_m","header_b"}
+	{pc:content  action="position" posid="50" order="listorder DESC" num="20"} 
+	<div class="banner">
+		{loop $data $key $val}
+			<img src="{$val['thumb']}">
+		{/loop} 
+	</div>
+	{/pc} 
+	<script>
+	var q=$(".banner img").length
+	var w=0
+	$(".banner img").hide()
+	$(".banner img").eq(0).show()
+	var r=setInterval(function(){
+		if(w<q-1)
+		{w=w+1}
+		else{w=0}
+		$(".banner img").hide()
+		$(".banner img").eq(w).show()
+	},3000)
+	</script>
+<div class="clearfix"></div>
+
+	<div class="content">
+		<div class="content1">
+			<div class="biaot">
+				<h2>{$CATEGORYS[$catid][catname]}</h2>
+				<div class="clearfix"></div>
+			</div>
+			{pc:content  action="lists" catid="$catid" order="listorder DESC" num="1000" page="$page"} 
+			<ul class="xinwen2">
+				{loop $data $key $v} 
+				<li>
+					<a href="{str_replace('http://www.','http://m.',$v[url])}">
+						<img src="{$v['thumb']}">
+						<h4>{$v['title']}</h4>
+						<h5>{date("Y-m-d",$v["inputtime"])}</h5>
+						<h3 style="clear: both;"></h3>
+					</a>
+				</li>
+				{/loop}
+			</ul>
+			{/pc}
+		</div>
+		
+
+		
+
+
+		
+	</div>
+
+	
+	
+	{template "content_m","footer"}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+</div>
+</body>
+</html>

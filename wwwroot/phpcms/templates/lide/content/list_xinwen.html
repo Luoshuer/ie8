@@ -1,0 +1,40 @@
+{template "content","header_b"}
+
+		{pc:content  action="position" posid="46" order="listorder DESC" num="20"} 
+
+	  {loop $data $key $val} 
+		  <img src="{$val['thumb']}" class="topim">
+		 {/loop} 
+
+		{/pc} 
+
+<div class="content">
+	<div class="gongsi">
+		<div class="biaot3">
+			<div class="biaot3a">
+			<h1>{$CATEGORYS[$catid][catname]}</h1>
+			<h2>COMPREHENSIVE</h2>
+			</div>
+		</div>
+		{pc:content  action="lists" catid="$catid" order="listorder DESC" num="10" page="$page"} 
+		<div class="gongsi1">
+			{loop $data $key $v} 
+			<div class="gongsi1a">
+				<a href="{$v['url']}" class="gongsi1b"><img src="{$v['thumb']}"></a>
+				<a href="{$v['url']}" class="gongsi1c">
+					<h2>{date("Y-m-d",$v["inputtime"])}</h2>
+					<h3>{$v['title']}</h3>
+					<h4>{$v['description']}</h4>
+				</a>
+				<div class="clearfix"></div>
+			</div>
+			{/loop}
+			<div id="pages" class="pagess">{$pages}</div>
+			<div class="clearfix" style="margin-top: 30px;margin-right: 50px;"></div>
+		</div>
+		{/pc}  
+
+
+	</div>
+</div>
+{template "content","footer"}

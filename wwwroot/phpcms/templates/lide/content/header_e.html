@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<title>{if isset($SEO['title']) && !empty($SEO['title'])}{$SEO['title']}{/if}{$SEO['site_title']}</title>
+<meta name="Keywords" content="{$SEO['keyword']}" >
+<meta name="Description" content="{$SEO['description']}" >
+<link href="/favicon.ico" rel="shortcut icon">
+
+<script src="{JS_PATH}js/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="{JS_PATH}js/ss.js"></script>
+<link type="text/css" rel="stylesheet" href="{CSS_PATH}css/style.css">
+<script src="{JS_PATH}js/jquery-1.10.2.js"></script> 
+<script src="{JS_PATH}js/gdlb.js"></script>
+<script type="text/javascript" src="{JS_PATH}js/jquery.jslides.js"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+<div class="header">
+	<div class="top">
+		<img src="{IMG_PATH}images/a1.png" class="logo">
+		<div class="top1">
+			<img src="{IMG_PATH}images/a2.png" width="63px" height="63px">
+			<p>业务咨询<br>
+			<span>400-990-7425</span></p>
+			<div class="clearfix"></div>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<div class="nav">
+	<div class="navbox">
+		<ul>
+			<li><a href="{siteurl($siteid)}/">首页</a></li>
+			<li><a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=9">关于我们</a></li>
+			<li><a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=10">新闻动态</a></li>
+			<li><a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=23">产品中心</a></li>
+			<li><a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=12">科技创新</a></li>
+			<li><a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=13">党群园地</a></li>
+			<li><a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=14">社会责任</a></li>
+			<li><a href="{APP_PATH}index.php?m=content&c=index&a=lists&catid=15">人力资源</a></li>
+			<div class="clearfix"></div>
+		</ul>
+		<div class="sousuo" style="margin-left: 15px;float: left;margin-top: 9px;">
+		<div class="search">
+    	<div class="tab" id="search" style="display: none;">
+			{php $j=0}
+			{php $search_model = getcache('search_model_'.$siteid, 'search');}
+			{loop $search_model $k=>$v}
+			{php $j++;}
+				<a href="javascript:;" onclick="setmodel({$v['typeid']}, $(this));" style="outline:medium none;" hidefocus="true" {if $j==1 && $typeid=$v['typeid']} class="on" {/if}>{$v['name']}</a>{if $j != count($search_model)}<span> | </span>{/if}
+			{/loop}
+			{php unset($j);}
+		</div>
+
+        <div class="bd">
+            <form action="{APP_PATH}index.php" method="get" target="_blank">
+				<input type="hidden" name="m" value="search"/>
+				<input type="hidden" name="c" value="index"/>
+				<input type="hidden" name="a" value="init"/>
+				<input type="hidden" name="typeid" value="{$typeid}" id="typeid"/>
+				<input type="hidden" name="siteid" value="{$siteid}" id="siteid"/>
+                <input type="text" class="text" name="q" id="q" style="height: 28px;float: left;outline: none;width:200px;border:none;">
+						 <input type="submit" value="搜 索" class="button" style="border:2px solid #ffffff;background-color:#1d90c7;height: 30px;color:white;float: left;outline: none;">
+            </form>
+        </div>
+    	</div>
+    	</div>
+		<div class="clearfix"></div>
+	</div>
+	</div>
+	<div id="ban1">
+	  <div class="banner" style="height: 400px;">
+		{pc:content  action="position" posid="40" order="listorder DESC" num="20"} 
+		<ul class="img">
+	  {loop $data $key $val} 
+		  <li><a><img src="{$val['thumb']}"></a></li>
+		 {/loop} 
+		</ul>
+		{/pc} 
+		<ul class="num">
+		</ul>
+		<div class="btn btn_l">&lt;</div>
+		<div class="btn btn_r">&gt;</div>
+	  </div>
+	</div>
+	
+	
+</div>

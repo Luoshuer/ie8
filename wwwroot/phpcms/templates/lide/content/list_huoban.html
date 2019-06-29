@@ -1,0 +1,37 @@
+{template "content","header_b"}
+
+		{pc:content  action="position" posid="47" order="listorder DESC" num="20"} 
+
+	  {loop $data $key $val} 
+		  <img src="{$val['thumb']}" class="topim">
+		 {/loop} 
+
+		{/pc} 
+
+<div class="content">
+	<div class="gongsi">
+		<div class="biaot3">
+			<div class="biaot3a">
+			<h1>{$CATEGORYS[$catid][catname]}</h1>
+
+			</div>
+		</div>
+		<div style="width:1200px;margin:0 auto;padding-bottom: 60px;">
+		{pc:content  action="lists" catid="$catid" order="listorder DESC" num="20" page="$page"} 
+			<div>
+			{loop $data $key $v} 
+				<a href="{$v[youq]}" class="gongsi1b" style="display: block;float: left;width:250px;margin-left:20px;margin-top: 30px; ">
+					<img src="{$v['thumb']}" style="width:250px;height: 116px;">
+					<h4 style="text-align: center;color:black;line-height: 30px;">{$v['title']}</h4>
+				</a>
+			{/loop}
+			<div style="clear: both"></div>
+			<div id="pages" class="pagess">{$pages}</div>
+			</div>
+		{/pc}
+		</div>   
+
+
+	</div>
+</div>
+{template "content","footer"}

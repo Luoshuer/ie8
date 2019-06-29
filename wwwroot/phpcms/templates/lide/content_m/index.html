@@ -1,0 +1,105 @@
+{template "content_m","header"}
+	<div class="nav">
+		<div>
+		<a href="http://m.orlete.cn/" style="margin-left: 0;"><img src="{IMG_PATH}images2/a2.png"></a>
+		<a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=9"><img src="{IMG_PATH}images2/a3.png"></a>
+		<a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=19"><img src="{IMG_PATH}images2/a4.png"></a>
+		<a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=23"><img src="{IMG_PATH}images2/a5.png"></a>
+		<div class="clearfix"></div>
+		</div>
+		<div style="margin-top: 10px;">
+		<a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=12" style="margin-left: 0;"><img src="{IMG_PATH}images2/a6.png"></a>
+		<a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=13"><img src="{IMG_PATH}images2/a7.png"></a>
+		<a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=14"><img src="{IMG_PATH}images2/a8.png"></a>
+		<a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=15"><img src="{IMG_PATH}images2/a9.png"></a>
+		<div class="clearfix"></div>
+		</div>
+	</div>
+	<div style="height: 10px;background-color:#f2f1ef;margin-top: 10px;"></div>	
+	<div class="content">
+		<div class="content1">
+			<div class="biaot">
+				<h2>新闻动态</h2>
+				<a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=10">更多&gt;&gt;</a>
+				<div class="clearfix"></div>
+			</div>
+			{pc:content  action="position" posid="20" order="listorder DESC" num="1"} 
+			{loop $data $key $v} 
+			<a href="{str_replace('http://www.','http://m.',$v[url])}" class="xinwen1">
+				<img src="{$v['thumb']}">
+				<h3>{str_cut($v['title'],44,"…")}</h3>
+			</a>
+			{/loop}
+			{/pc} 
+			{pc:content  action="position" posid="21" order="listorder DESC" num="4"}
+			<ul class="xinwen2">
+				{loop $data $key $v} 
+				<li>
+					<a href="{str_replace('http://www.','http://m.',$v[url])}">
+						<img src="{$v['thumb']}">
+						<h4>{str_cut($v['title'],44,"…")}</h4>
+						<h5>{date("Y-m-d",$v["inputtime"])}</h5>
+						<h3 style="clear: both;"></h3>
+					</a>
+				</li>
+				{/loop}
+			</ul>
+			{/pc} 
+		</div>
+		<div class="content2">
+			<div class="biaot">
+				<h2>产品中心</h2>
+				<a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=23">更多&gt;&gt;</a>
+				<div class="clearfix"></div>
+			</div>
+			<div class="chanpin">
+				<a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=23">
+					<img src="{IMG_PATH}images2/a11.png">
+				</a>
+				<a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=24">
+					<img src="{IMG_PATH}images2/a12.png">
+				</a>
+				<a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=25">
+					<img src="{IMG_PATH}images2/a13.png">
+				</a>
+			</div>
+		</div>
+		<div style="height: 10px;background-color:#f2f1ef;margin-top: 10px;"></div>	
+		<div class="content3">
+			<div class="biaot">
+				<h2>科技创新</h2>
+				<a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=12">更多&gt;&gt;</a>
+				<div class="clearfix"></div>
+			</div>
+			<div class="keji">
+				<img src="{IMG_PATH}images2/a14.png">
+				<img src="{IMG_PATH}images2/a15.png" style="margin-left: 6%;">
+				<img src="{IMG_PATH}images2/a16.png" style="margin-top: 20px;">
+				<img src="{IMG_PATH}images2/a17.png" style="margin-left: 6%;margin-top: 20px;">
+				<div class="clearfix"></div>
+			</div>
+			
+		</div>
+		<div style="height: 10px;background-color:#f2f1ef;margin-top: 10px;"></div>	
+		<div class="content4">
+			<div class="biaot">
+				<h2>公司简介</h2>
+				<a href="http://m.orlete.cn/index.php?m=content&c=index&a=lists&catid=9">更多&gt;&gt;</a>
+				<div class="clearfix"></div>
+			</div>
+			<div class="jianjie">
+				<img src="{IMG_PATH}images2/a18.png">
+				<p>
+				南京利德东方橡塑科技有限公司创建于1949年5月16日。公司位于江苏省南京市六合经济开发区宁六路581号。<br>
+				作为橡胶制品科技研发和智能、绿色制造的现代化企业，国家高新技术企业，江苏省工程技术研究中心，公司拥有专业的研发团队和通过CNAS认证的检测中心，主要产品为汽车管路、轨道交通类橡胶制品，及新能源、航空航天、海洋工程等新兴市场类橡胶制品。产品出口美国、日本和东南亚等国家和地区，“利德...
+				</p>
+			</div>
+		</div>
+		
+	</div>
+{template "content_m","footer"}
+	
+	
+	
+	
+	

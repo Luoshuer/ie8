@@ -1,0 +1,43 @@
+{template "content_m","header_b"}
+{pc:content  action="position" posid="51" order="listorder DESC" num="20"} 
+	<div class="banner">
+		{loop $data $key $val}
+			<img src="{$val['thumb']}">
+		{/loop} 
+	</div>
+	{/pc} 
+	<script>
+	var q=$(".banner img").length
+	var w=0
+	$(".banner img").hide()
+	$(".banner img").eq(0).show()
+	var r=setInterval(function(){
+		if(w<q-1)
+		{w=w+1}
+		else{w=0}
+		$(".banner img").hide()
+		$(".banner img").eq(w).show()
+	},3000)
+	</script>
+<div class="clearfix"></div>
+	<div class="content">
+		<div class="xiangqingp">
+			<div class="xiangqingp1">
+				<h1>{$mingcheng}</h1>
+				<p>工作地点：{$didian}<br>
+					最高学历：{$xueli}<br>
+					薪资范围：{$xinzi}<br>
+					工作经验：{$jingyan}<br>
+					发布时间：{date('Y-m-d',strtotime($inputtime))}<br>
+				</p>
+			</div>
+			<div class="xiangqingp2">
+				{$content}
+			</div>			
+		</div>	
+	</div>
+{template "content_m","footer"}
+	
+	
+	
+
